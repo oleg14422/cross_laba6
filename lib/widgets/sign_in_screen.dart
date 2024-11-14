@@ -20,9 +20,55 @@ class SignInScreen extends StatelessWidget {
                 width: 200,
               ),
             ),
+            const SizedBox(height: 16),
+            const Text('Email:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              )
+            ),
+            const TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder()
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text('Password:',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold
+                )
+            ),
+            const TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder()
+              ),
+            ),
+            SizedBox(height: 16),
+
+            Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 48,
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignupScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text("Sign up"),
+                    ),
+                  )
+                )
+              ],
+            ),
+
+
 
             // TODO: Add some widgets here
-
+            const SizedBox(height: 16),
             Row(
               children: [
                 Expanded(
@@ -47,6 +93,22 @@ class SignInScreen extends StatelessWidget {
 
 
                 const SizedBox(width: 16.0),
+                Expanded(
+                  child: SizedBox(
+                    height: 48,
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ResetPasswordScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text("Reset password"),
+                    )
+                  )
+                )
               ],
             ),
             const SizedBox(height: 24.0),
